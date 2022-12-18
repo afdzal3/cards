@@ -18,3 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/card', [App\Http\Controllers\CardController::class,'index'])->name('card.index');
+
+Route::post('/card', [App\Http\Controllers\CardController::class,'doShuffle'])->name('card.shuffle');
