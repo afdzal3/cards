@@ -67,7 +67,7 @@ class CardController extends Controller
             }
         }
 
-        dd($result);
+        //dd($result);
             return view('card.index', ['result' => $result]);
 
     }

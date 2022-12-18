@@ -4,9 +4,10 @@
 
 
 @section('content')
-<div class="row">
-    <div class="col-md-6">
-        <form  method="post" action="{{route('card.shuffle')}}">
+<div class="row justify-content-center ">
+    <div class="col-md-9 card">
+
+        <form method="post" action="{{route('card.shuffle')}}">
             @csrf
             @if ($errors->any())
             <div class="alert alert-danger" role="alert">
@@ -25,4 +26,32 @@
         </form>
     </div>
 </div>
+@if(isset($result))
+<div class="row justify-content-center ">
+    <div class="col-md-9 card">
+        <div class="card-header">
+            Result
+        </div>
+        <div class="card-body">
+            @foreach ($result as $res)
+
+            @foreach ($res as $r)
+            {{$r}},
+            @endforeach
+            <br/>
+
+
+
+
+            @endforeach
+
+            @php
+           // var_dump($result);
+            @endphp
+
+        </div>
+
+    </div>
+</div>
+@endif
 @stop
