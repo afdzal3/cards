@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/card', [App\Http\Controllers\CardController::class,'index'])->name('card.index');
