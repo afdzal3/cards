@@ -8,7 +8,7 @@ class CardController extends Controller
     public function index(Request $req)
     {
 
-        return "test";
+        return view('card.index', []);
 
     }
 
