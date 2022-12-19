@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('jobs_career_paths', function (Blueprint $table) {
             $table->id();
             $table->integer('job_id')->nullable();
-            $table->integer('affliate_id')->nullable();
+            $table->integer('affiliate_id')->nullable();
 
             $table->timestamps();
-            $table->unique(['job_id', 'affliate_id'],'jb_career_path_idx1');
+            $table->unique(['job_id', 'affiliate_id'],'jb_career_path_idx1');
         });
     }
 

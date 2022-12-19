@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->integer('sort_order')->nullable();
+            $table->integer('job_category_id')->nullable();
+            
 
             $table->integer('created_by')->nullable();
             $table->datetime('created')->nullable();
