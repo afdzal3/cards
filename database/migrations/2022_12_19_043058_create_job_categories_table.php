@@ -20,8 +20,8 @@ return new class extends Migration
 
 
             $table->integer('created_by')->nullable();
-            $table->datetime('created')->nullable();
-            $table->datetime('modified')->nullable();
+            $table->datetime('created')->useCurrent()->useCurrentOnCreate();
+            $table->datetime('modified')->useCurrent()->useCurrentOnUpdate();
             $table->datetime('deleted')->nullable();
             
 

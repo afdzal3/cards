@@ -30,7 +30,7 @@
 <div class="row justify-content-center ">
     <div class="col-md-9 card">
         <div class="card-header">
-            Result
+            Result.
         </div>
         <div class="card-body">
             @foreach ($result as $res)

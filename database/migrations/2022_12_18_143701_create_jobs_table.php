@@ -44,7 +44,7 @@ return new class extends Migration
             $table->string('version')->nullable();
             $table->integer('created_by')->nullable();
             $table->datetime('created')->nullable();
-            $table->datetime('modified')->nullable();
+            $table->datetime('modified')->useCurrent()->useCurrentOnUpdate();
             $table->datetime('deleted')->nullable();
 
 
