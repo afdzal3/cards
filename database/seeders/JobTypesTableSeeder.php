@@ -32,6 +32,19 @@ class JobTypesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            1 => 
+            array (
+                'id' => 2,
+                'name' => 'Doctor',
+                'sort_order' => NULL,
+                'job_category_id' => NULL,
+                'created_by' => NULL,
+                'created' => NULL,
+                'modified' => NULL,
+                'deleted' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         

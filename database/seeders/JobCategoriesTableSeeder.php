@@ -29,6 +29,16 @@ class JobCategoriesTableSeeder extends Seeder
                 'modified' => '2022-12-20 11:19:39',
                 'deleted' => NULL,
             ),
+            1 => 
+            array (
+                'id' => 2,
+                'name' => 'Healthcare',
+                'sort_order' => NULL,
+                'created_by' => NULL,
+                'created' => '2022-12-22 00:47:25',
+                'modified' => '2022-12-22 00:47:25',
+                'deleted' => NULL,
+            ),
         ));
         
         
