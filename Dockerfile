@@ -51,7 +51,7 @@ CMD ["php-fpm"]
 
 RUN cd /var/www/html 
 RUN composer install
-RUN rm .env
+RUN rm .env; exit 0
 RUN mv env.docker .env
 RUN php artisan key:generate
 RUN php artisan route:clear
