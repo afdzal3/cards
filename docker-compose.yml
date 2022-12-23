@@ -22,7 +22,16 @@ services:
         depends_on: 
             - db
         networks:
-        - app-network        
+        - app-network       
+    migratedb:
+        build: 
+            context: .
+            dockerfile: Dockerfile
+        command: 'php artisan migrate:fresh --seed'
+        depends_on: 
+            - db
+        networks:
+        - app-network            
 
     db:
         platform: linux/x86_64
