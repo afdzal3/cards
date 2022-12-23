@@ -1,7 +1,7 @@
 FROM php:8.2-fpm
 
 # Copy composer.lock and composer.json
-COPY composer.lock composer.json /var/www/
+COPY composer.lock composer.json /var/www/html/
 
 # Set working directory
 WORKDIR /var/www/html
@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -y \
     curl
 
 # Clear cache
-#RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install extensions
 RUN docker-php-ext-install pdo_mysql
@@ -30,6 +30,7 @@ RUN docker-php-ext-install pdo_mysql
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
 
 # Add user for laravel application
 RUN groupadd -g 1000 www
@@ -48,7 +49,12 @@ USER www
 EXPOSE 9000
 CMD ["php-fpm"]
 
-RUN cd /var/www/html &&  php artisan key:generate
+RUN cd /var/www/html 
+RUN composer install
+RUN rm .env
+RUN mv env.docker .env
+RUN php artisan key:generate
+RUN php artisan route:clear
 
 # COPY ./run.sh /tmp    
-CMD [".run.sh"]
+#CMD [".run.sh"]
